@@ -1,0 +1,9 @@
+{
+  "port": 3000,
+    "todo": {
+      "path": "/todo",
+      "api": {
+        "readItem": "/:id"
+      }
+    }
+}
