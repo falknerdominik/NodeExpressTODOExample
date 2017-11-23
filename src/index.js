@@ -1,6 +1,7 @@
 /* imports */
 const express = require('express');
 const app = express();
+const cors = require('cors');
 
 /* configuration */
 const config = require("./config.json");
@@ -25,6 +26,8 @@ const list = new Todolist(
     }
   ]
 );
+
+app.use(cors());
 
 app.get(config.todo.path, (req, res) => todoApi.read(req, res, list));
 app.get(config.todo.path + config.todo.api.readItem, (req, res) => todoApi.readItem(req, res, list));
