@@ -29,5 +29,7 @@ const list = new Todolist(
 app.get(config.todo.path, (req, res) => todoApi.read(req, res, list));
 app.get(config.todo.path + config.todo.api.readItem, (req, res) => todoApi.readItem(req, res, list));
 app.put(config.todo.path + config.todo.api.readItem, (req, res) => todoApi.update(req, res, list));
+app.delete(config.todo.path + config.todo.api.readItem, (req, res) => todoApi.delete(req, res, list));
+app.post(config.todo.path, (req, res) => todoApi.create(req, res, list));
 
 app.listen(config.port, () => console.log('TODO Server is listening on port 3000!'))
